@@ -1,8 +1,8 @@
 {
-  "name": "njs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nodejs-gulp-demo",
+  "version": "0.0.1",
+  "description": "NodeJS - Gulp - Babel demo",
+  "main": "src/index.js",
   "scripts": {
     "prestart": "gulp",
     "start": "node dist/assets/js/main.js",

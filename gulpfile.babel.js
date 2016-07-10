@@ -14,7 +14,7 @@ import babel from 'gulp-babel';
 import del from 'del';
 
 gulp.task('styles', () => {
-    sass('src/styles/**/*.scss', { style: 'expanded' })
+  sass('public/styles/**/*.scss', { style: 'expanded' })
   .pipe(autoprefixer('last 2 version'))
   .pipe(gulp.dest('dist/assets/css'))
   .pipe(rename({suffix: '.min'}))
@@ -24,7 +24,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-  gulp.src('src/**/*.js')
+  gulp.src('public/scripts/**/*.js')
   .pipe(babel())
   .pipe(concat('main.js'))
   .pipe(gulp.dest('dist/assets/js'))
@@ -45,11 +45,11 @@ gulp.task('default', ['clean'], () => {
 gulp.task('watch', () => {
 
   // Watch .scss files
-  watch('src/styles/**/*.scss', ['styles']).on('change', () => {
+  watch('public/styles/**/*.scss', ['styles']).on('change', () => {
     gulp.run('default');
   });
 
   // Watch .js files
-  watch('src/scripts/**/*.js', ['scripts']);
+  watch('public/scripts/**/*.js', ['scripts']);
 
 });
